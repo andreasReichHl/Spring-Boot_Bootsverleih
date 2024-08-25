@@ -53,7 +53,7 @@ public class BootRepository {
 
     public List<Boot> searchBoat(String search){
         return bootDb.stream()
-                .filter(boot -> boot.getName().equalsIgnoreCase(search))
+                .filter(boot -> boot.getName().toLowerCase().contains(search.toLowerCase()))
                 .toList();
     }
 }
